@@ -23,4 +23,4 @@ COPY example.json /example.json
 
 RUN apk del .build-deps
 
-CMD python3 /dynamic.py --hostname $HOSTNAME --username $USERNAME --password $PASSWORD --file $FILENAME
+CMD python3 /dynamic.py --hostname $HOSTNAME --username $USERNAME --password $PASSWORD --file $FILENAME --loop

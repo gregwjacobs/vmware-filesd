@@ -280,7 +280,7 @@ def main():
         vmware.do_login()
         vmware.populate()
         vmware.hostlist.prometheus_output()
-        if args.loop == True:
+        if args.loop == False:
             break
 
 if __name__ == '__main__':
