@@ -1,8 +1,6 @@
 FROM python:3.7.3-alpine3.10
 MAINTAINER samuel.shannon@flexential.com
 
-WORKDIR /root
-
 ENV USERNAME "username"
 ENV HOSTNAME "10.0.0.1"
 ENV PASSWORD "password"
