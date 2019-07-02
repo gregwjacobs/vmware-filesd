@@ -7,8 +7,8 @@ build:
     -  testing
   stage: build
   script:
-    - docker build -t radius-keycloak:${CI_PIPELINE_ID} -t harbor.compliant.flexentialps.com/fps-public/radius-keycloak:${CI_PIPELINE_ID} .
+    - docker build -t vmware-filesd:${CI_PIPELINE_ID} -t harbor.compliant.flexentialps.com/fps-public/vmware-filesd:${CI_PIPELINE_ID} .
     - echo $DOCKER_USER
     - echo $DOCKER_PASS
     - echo $DOCKER_PASS | docker login -u$DOCKER_USER --password-stdin harbor.compliant.flexentialps.com
-    - docker push harbor.compliant.flexentialps.com/fps-public/radius-keycloak:${CI_PIPELINE_ID} 
+    - docker push harbor.compliant.flexentialps.com/fps-public/vmware-filesd:${CI_PIPELINE_ID} 
