@@ -1,4 +1,4 @@
-# This is file discovery implementation utilizing VMware tags for Prometheus discovery
+# This is a file discovery implementation utilizing VMware tags for Prometheus discovery
 
 This repository utilizes code from Ansible VMware inventory and has been modified to work for Prometheus. It can be slow in large vmware environments.
 
