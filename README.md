@@ -47,4 +47,47 @@ spec:
     key: additional-scrape-configs.yaml
 ```
 
+Example output
+```
+[
+    {
+        "targets": [
+            "example_host_2"
+        ],
+        "labels": [
+            {
+                "tag": "QA"
+            },
+            {
+                "tag": "Linux"
+            },
+            {
+                "tag": "Tomcat"
+            },
+            {
+                "tag": "NFS"
+            },
+            {
+                "address": "192.168.1.245"
+            }
+        ]
+    }
+]
+```
+
+Prometheus will read this output as a file discovery. It can be imported and relabled like the following:
+```
+- job_name: 'vmware_filesd'
+  scrape_interval: 30s
+  file_sd_configs:
+    - files:
+        - /etc/prometheus/config_out/output.json
+  relabel_configs:
+  - source_labels: [address]
+    target_label:  __address__
+    replacement:   '${1}:9100'
+  - source_labels: [__param_target]
+    target_label: instance
+```
+
 It can also be called from the commandline directly: `python3 dynamic.py --hostname $HOSTNAME --username $USERNAME --password $PASSWORD --file $FILENAME --loop`
